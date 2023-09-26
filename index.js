@@ -73,7 +73,7 @@ function onChatMessage(data) {
     leaderboard = leaderboard.slice(0, 50);
     console.log('Correct!');
     console.log(leaderboard);
-    sendToFrontend({leaderboard});
+    sendToFrontend({ pokemonName, pokemonImage, revealAnswer, userRound, roundStartTime, guessedUsers, leaderboard });
   }
 }
 
@@ -83,10 +83,10 @@ async function handleGameRound() {
     leaderboard = [];
     guessedUsers.clear();
     revealAnswer = false;
-    sendToFrontend({ pokemonName, pokemonImage, revealAnswer, userRound, roundStartTime, guessedUsers });
+    sendToFrontend({ pokemonName, pokemonImage, revealAnswer, userRound, roundStartTime, guessedUsers, leaderboard });
     await new Promise(resolve => setTimeout(resolve, 60000));
     revealAnswer = true;
-    sendToFrontend({revealAnswer});
+    sendToFrontend({ pokemonName, pokemonImage, revealAnswer, userRound, roundStartTime, guessedUsers, leaderboard });
     await new Promise(resolve => setTimeout(resolve, 10000));
   } catch (error) {
     console.error('An error occurred:', error);
