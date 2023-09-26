@@ -3,6 +3,7 @@ let pokemonImage = null;
 let revealAnswer = false;
 let roundStartTime = null;
 let giftedUserId = null;
+let userRound = null;
 const guessedUsers = new Set();
 let leaderboard = [];
 const giftedUsersComments = {};
